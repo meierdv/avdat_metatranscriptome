@@ -1,7 +1,5 @@
-setwd("/home/dmeier/DOME/Avdat_transcriptomes/")
 library("DESeq2")
 require(data.table)
-
 
 All_Feature_counts <- read.csv("Avdat_featureCounts.tsv", 
                                sep="\t", 
@@ -517,7 +515,7 @@ ALL_COMBINED <- merge(All_TPM_annotated, Log_and_pvalues_all,
                       by="Geneid", 
                       all=T)
 
-write.table(ALL_COMBINED, file="Avdat_TPM_per_MAG_DeSeq2_annotated.tsv", 
+write.table(ALL_COMBINED, file="Avdat_per_bin_normalized_TPMs_DeSeq2.tsv", 
             sep="\t", 
             quote=F, 
             row.names=F)
